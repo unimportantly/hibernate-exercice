@@ -13,12 +13,14 @@ public class Subsidiary {
     @Column(name = "subsidiary_id")
     private long subsidiaryId;
     private String name;
+    @Column(name="employee_number")
     private int employeeNumber;
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
     @ManyToMany
-    @JoinTable (joinColumns = @JoinColumn(name = "subsidiary_id"),
+    @JoinTable ( name="sector_subsidiary",
+            joinColumns = @JoinColumn(name = "subsidiary_id"),
                     inverseJoinColumns = @JoinColumn(name = "sector_id"))
     private Set<Sector> sectorSet = new HashSet<Sector>();
 

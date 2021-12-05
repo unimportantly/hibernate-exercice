@@ -27,5 +27,8 @@
 		<mapping class="entities.Category"/>
 		<mapping class="entities.User"/>
 		<mapping class="entities.Group"/>
+		<mapping class="entities.Company"/>
+		<mapping class="entities.Subsidiary"/>
+		<mapping class="entities.Sector"/>
 	</session-factory>
 </hibernate-configuration>
