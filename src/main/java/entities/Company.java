@@ -1,6 +1,9 @@
 package entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="company")
@@ -11,9 +14,8 @@ public class Company {
     @Column(name="company_id")
     private long companyId;
     private String name;
-
-    public Company() {
-    }
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "company")
+    private Set<Subsidiary> subsidiaries = new HashSet<Subsidiary>();
 
     public long getCompanyId() {
         return companyId;
@@ -29,5 +31,13 @@ public class Company {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Subsidiary> getSubsidiaries() {
+        return subsidiaries;
+    }
+
+    public void setSubsidiaries(Set<Subsidiary> subsidiaries) {
+        this.subsidiaries = subsidiaries;
     }
 }

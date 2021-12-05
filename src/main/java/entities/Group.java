@@ -24,7 +24,7 @@ public class Group {
 	private String name;
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(
-				name= "groups_users",
+				name= "group_users",
 				joinColumns = @JoinColumn(name = "group_id"),
 				inverseJoinColumns = @JoinColumn(name = "user_id")
 			)
