@@ -16,7 +16,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.ManyToAny;
 
 @Entity
-@Table(name = "`groups`")
+@Table(name = "group")
 public class Group {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
